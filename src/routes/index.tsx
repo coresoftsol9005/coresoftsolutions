@@ -30,6 +30,16 @@ export const Route = createFileRoute("/")({
         content:
           "We help local businesses scale through AI, lead generation, and a brand that demands attention.",
       },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:title", content: "CoreSoft Solutions — AI & Digital Growth Studio" },
+      {
+        name: "twitter:description",
+        content:
+          "We help local businesses scale through AI, lead generation, and a brand that demands attention.",
+      },
     ],
   }),
   component: Index,

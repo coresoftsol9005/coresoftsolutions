@@ -30,10 +30,14 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "CoreSoft Solutions" },
+      { name: "theme-color", content: "#0A1628" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "CoreSoft Solutions" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
       {
         rel: "stylesheet",
         href: appCss,
