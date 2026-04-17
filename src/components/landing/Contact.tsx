@@ -25,15 +25,32 @@ export function Contact() {
 
             <div className="mt-10 space-y-5 border-t border-border pt-8">
               {[
-                { icon: Mail, label: "hello@coresoft.solutions" },
-                { icon: Phone, label: "+91 00000 00000" },
-                { icon: MapPin, label: "Remote · Worldwide" },
+                {
+                  icon: Mail,
+                  label: "rkentra9005@gmail.com",
+                  href: "mailto:rkentra9005@gmail.com",
+                },
+                {
+                  icon: Phone,
+                  label: "+91 81681 94134",
+                  href: "tel:+918168194134",
+                },
+                { icon: MapPin, label: "Remote · Worldwide", href: undefined },
               ].map((c) => (
                 <div key={c.label} className="flex items-center gap-4">
                   <div className="bg-grad-navy flex h-10 w-10 items-center justify-center rounded-xl">
                     <c.icon className="h-4 w-4 text-light-blue" />
                   </div>
-                  <span className="text-sm text-text-mid">{c.label}</span>
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      className="text-sm text-text-mid transition-colors hover:text-foreground"
+                    >
+                      {c.label}
+                    </a>
+                  ) : (
+                    <span className="text-sm text-text-mid">{c.label}</span>
+                  )}
                 </div>
               ))}
             </div>
