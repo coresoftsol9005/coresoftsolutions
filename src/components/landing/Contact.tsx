@@ -1,5 +1,5 @@
 import { ContactForm } from "./ContactForm";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 export function Contact() {
   return (
@@ -34,6 +34,11 @@ export function Contact() {
                   icon: Phone,
                   label: "+91 81681 94134",
                   href: "tel:+918168194134",
+                },
+                {
+                  icon: MessageCircle,
+                  label: "Chat on WhatsApp",
+                  href: "https://wa.me/918168194134?text=Hi%20CoreSoft%2C%20I%27d%20like%20to%20chat%20about%20a%20project.",
                 },
                 { icon: MapPin, label: "Remote · Worldwide", href: undefined },
               ].map((c) => (
