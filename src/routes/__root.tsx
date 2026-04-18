@@ -1,6 +1,7 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { FloatingSocial } from "@/components/landing/FloatingSocial";
 
 function NotFoundComponent() {
   return (
@@ -69,5 +70,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const hideSocial = pathname.startsWith("/admin") || pathname.startsWith("/auth");
+  return (
+    <>
+      <Outlet />
+      {!hideSocial && <FloatingSocial />}
+    </>
+  );
 }
