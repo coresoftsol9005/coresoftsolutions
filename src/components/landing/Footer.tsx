@@ -1,35 +1,53 @@
 import { Logo } from "./Logo";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-10">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <div>
+    <footer className="relative border-t border-border bg-background overflow-hidden">
+      <div className="glow-orb glow-orb-red left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
+      <div className="relative mx-auto max-w-7xl px-6 py-14 md:px-10">
+        <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-start">
+          <div className="max-w-sm">
             <Logo />
-            <p className="mt-4 max-w-xs text-sm text-text-dim">
+            <p className="mt-4 text-sm text-text-dim">
               AI &amp; digital growth systems for ambitious local businesses.
+              Based in Hisar, Haryana.
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/coresoft.digital"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-dim transition-all hover:scale-110 hover:border-red-brand hover:text-foreground"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://wa.me/918168194134"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-dim transition-all hover:scale-110 hover:border-[#25D366] hover:text-[#25D366]"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
+              <a
+                href="mailto:rkentra9005@gmail.com"
+                aria-label="Email"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-dim transition-all hover:scale-110 hover:border-red-brand hover:text-foreground"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+            </div>
           </div>
           <div className="font-mono-brand grid grid-cols-2 gap-x-12 gap-y-2 text-xs text-text-dim md:grid-cols-3">
-            <a href="#problem" className="hover:text-foreground">
-              Problem
-            </a>
-            <a href="#framework" className="hover:text-foreground">
-              Framework
-            </a>
-            <a href="#pillars" className="hover:text-foreground">
-              Pillars
-            </a>
-            <a href="#industries" className="hover:text-foreground">
-              Industries
-            </a>
-            <a href="/about" className="hover:text-foreground">
-              About
-            </a>
-            <a href="#contact" className="hover:text-foreground">
-              Contact
-            </a>
+            <a href="/#problem" className="hover:text-foreground">Problem</a>
+            <a href="/#framework" className="hover:text-foreground">Framework</a>
+            <a href="/#pillars" className="hover:text-foreground">Pillars</a>
+            <a href="/#industries" className="hover:text-foreground">Industries</a>
+            <a href="/about" className="hover:text-foreground">About</a>
+            <a href="/discovery" className="hover:text-foreground">Discovery</a>
           </div>
         </div>
         <div className="font-mono-brand mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-text-dim md:flex-row md:items-center md:justify-between">
