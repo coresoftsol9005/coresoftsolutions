@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -29,13 +30,13 @@ export function Hero() {
         </p>
 
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
+          <Link
+            to="/discovery"
             className="bg-grad-red shadow-red-glow group inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white transition-transform hover:scale-[1.03]"
           >
-            Book a Call
+            Start Discovery
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
           <a
             href="#pillars"
             className="rounded-full border border-light-blue/30 px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-light-blue transition-colors hover:border-light-blue hover:bg-light-blue/5"

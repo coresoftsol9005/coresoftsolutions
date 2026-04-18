@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as DiscoveryRouteImport } from './routes/discovery'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const DiscoveryRoute = DiscoveryRouteImport.update({
+  id: '/discovery',
+  path: '/discovery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
+  '/discovery': typeof DiscoveryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
+  '/discovery': typeof DiscoveryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
+  '/discovery': typeof DiscoveryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/admin' | '/auth'
+  fullPaths: '/' | '/about' | '/admin' | '/auth' | '/discovery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/admin' | '/auth'
-  id: '__root__' | '/' | '/about' | '/admin' | '/auth'
+  to: '/' | '/about' | '/admin' | '/auth' | '/discovery'
+  id: '__root__' | '/' | '/about' | '/admin' | '/auth' | '/discovery'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRoute
   AuthRoute: typeof AuthRoute
+  DiscoveryRoute: typeof DiscoveryRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/discovery': {
+      id: '/discovery'
+      path: '/discovery'
+      fullPath: '/discovery'
+      preLoaderRoute: typeof DiscoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
   AuthRoute: AuthRoute,
+  DiscoveryRoute: DiscoveryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

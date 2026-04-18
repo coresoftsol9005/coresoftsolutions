@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 type NavLink = { label: string } & (
   | { to: "/"; hash?: string; href?: never }
   | { to: "/about"; hash?: never; href?: never }
+  | { to: "/discovery"; hash?: never; href?: never }
 );
 
 const links: NavLink[] = [
@@ -13,6 +14,7 @@ const links: NavLink[] = [
   { to: "/", hash: "pillars", label: "Pillars" },
   { to: "/", hash: "industries", label: "Industries" },
   { to: "/about", label: "About" },
+  { to: "/discovery", label: "Discovery" },
 ];
 
 export function Nav() {
@@ -49,11 +51,10 @@ export function Nav() {
           ))}
         </div>
         <Link
-          to="/"
-          hash="contact"
+          to="/discovery"
           className="bg-grad-red shadow-red-glow rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-transform hover:scale-105"
         >
-          Book a Call
+          Get Free Audit
         </Link>
       </div>
     </nav>
