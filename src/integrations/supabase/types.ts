@@ -41,6 +41,75 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_submissions: {
+        Row: {
+          area: string | null
+          budget: string | null
+          business_name: string
+          category: string
+          category_other: string | null
+          city: string
+          created_at: string
+          email: string
+          has_assets: string[] | null
+          has_assets_other: string | null
+          heard_from: string | null
+          id: string
+          is_online: string | null
+          main_goal: string | null
+          notes: string | null
+          owner_name: string
+          phone: string
+          services: string[]
+          timeline: string | null
+          whatsapp: string | null
+        }
+        Insert: {
+          area?: string | null
+          budget?: string | null
+          business_name: string
+          category: string
+          category_other?: string | null
+          city: string
+          created_at?: string
+          email: string
+          has_assets?: string[] | null
+          has_assets_other?: string | null
+          heard_from?: string | null
+          id?: string
+          is_online?: string | null
+          main_goal?: string | null
+          notes?: string | null
+          owner_name: string
+          phone: string
+          services?: string[]
+          timeline?: string | null
+          whatsapp?: string | null
+        }
+        Update: {
+          area?: string | null
+          budget?: string | null
+          business_name?: string
+          category?: string
+          category_other?: string | null
+          city?: string
+          created_at?: string
+          email?: string
+          has_assets?: string[] | null
+          has_assets_other?: string | null
+          heard_from?: string | null
+          id?: string
+          is_online?: string | null
+          main_goal?: string | null
+          notes?: string | null
+          owner_name?: string
+          phone?: string
+          services?: string[]
+          timeline?: string | null
+          whatsapp?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
