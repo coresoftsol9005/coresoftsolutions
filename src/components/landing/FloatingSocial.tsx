@@ -1,5 +1,14 @@
-import { Instagram } from "lucide-react";
 import { useEffect, useState } from "react";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 /**
  * Floating social action buttons (bottom-right).
@@ -23,7 +32,7 @@ export function FloatingSocial() {
         className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-card-soft backdrop-blur-md transition-all hover:scale-110 hover:border-red-brand/60 md:h-14 md:w-14"
       >
         <span className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-pink-500 via-red-brand to-yellow-500 opacity-0 blur-md transition-opacity group-hover:opacity-70" />
-        <Instagram className="h-5 w-5 md:h-6 md:w-6" strokeWidth={2} />
+        <InstagramIcon className="h-5 w-5 md:h-6 md:w-6" />
         <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-md bg-card px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-foreground opacity-0 shadow-card-soft transition-opacity group-hover:opacity-100">
           Instagram
         </span>

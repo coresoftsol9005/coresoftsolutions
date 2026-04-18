@@ -1,5 +1,15 @@
 import { Logo } from "./Logo";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -21,7 +31,7 @@ export function Footer() {
                 aria-label="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-dim transition-all hover:scale-110 hover:border-red-brand hover:text-foreground"
               >
-                <Instagram className="h-4 w-4" />
+                <InstagramIcon className="h-4 w-4" />
               </a>
               <a
                 href="https://wa.me/918168194134"
